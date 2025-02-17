@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             SanskritDictionaryTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Android Sanskrit Dictionary App",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

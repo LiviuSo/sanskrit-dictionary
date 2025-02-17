@@ -1,7 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.jetbrains.kotlin)
+    alias(libs.plugins.google.devtools.ksp)
+    alias(libs.plugins.kotlin.compose.compiler)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.firebase.performance)
+    alias(libs.plugins.jetbrains.serialization)
 }
 
 android {
@@ -41,20 +47,47 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.bundles.compose)
+    implementation(libs.jetbrains.coroutines)
+    implementation(libs.jetbrains.serialization)
+    implementation(libs.jetbrains.reflect)
+
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.material3)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation)
+    implementation(libs.androidx.app.compat)
+    implementation(libs.androidx.custom.tabs)
+
+    implementation(libs.coil)
+    implementation(libs.coil.svg)
+    implementation(libs.onetrust)
+
+    // room
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler) // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    implementation(libs.room.ktx) // optional - Kotlin Extensions and Coroutines support for Room
+    testImplementation(libs.room.testing) // optional - Test helpers
+    implementation(libs.room.paging) // optional - Paging 3 Integration
+
+    implementation(libs.zxing)
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.bundles.firebase)
+
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation(libs.modelmapper)
+    testImplementation(libs.mockk)
+    testImplementation(libs.jetbrains.coroutines.test)
+
+    androidTestImplementation(libs.test.junit)
+    androidTestImplementation(libs.espresso)
+    androidTestImplementation(libs.compose.ui.test.junit)
+    androidTestImplementation(platform(libs.compose.bom))
+
+    debugImplementation(libs.bundles.ui.test)
+    debugImplementation(libs.leakcanary)
 }

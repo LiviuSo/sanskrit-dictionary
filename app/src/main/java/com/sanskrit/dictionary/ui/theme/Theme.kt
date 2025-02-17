@@ -50,6 +50,8 @@ fun SanskritDictionaryTheme(
         else -> LightColorScheme
     }
 
+    // todo investigate LocalProvider
+
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,

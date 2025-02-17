@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "360297050842",
+    "project_id": "sanskrit-dictionary-b2405",
+    "storage_bucket": "sanskrit-dictionary-b2405.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360297050842:android:137e1a08def32a2bda6be3",
+        "android_client_info": {
+          "package_name": "com.sanskrit.dictionary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ztzMtajUu0ZY0knccAqtG8okxBZ7cDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,34 +1,121 @@
 [versions]
-agp = "8.8.0"
-kotlin = "2.0.0"
-coreKtx = "1.15.0"
+
+plugin_jetbrains_kotlin = "2.0.20"
+plugin_google_services = "4.4.2"
+plugin_android_application = "8.7.3"
+plugin_jetbrains_serialization = "2.0.0-Beta2"
+plugin_firebase_crashlytics = "3.0.3"
+plugin_firebase_performance = "1.4.2"
+plugin_ksp = "2.0.20-1.0.24"
+
+jetbrains_coroutines = "1.10.1"
+jetbrains_serialization = "1.8.0"
+jetbrains_reflect = "2.1.0"
+
+androidx_core = "1.15.0"
+androidx_app_compat = "1.7.0"
+androidx_navigation = "2.8.7"
+androidx_lifecycle = "2.8.7"
+androidx_activity = "1.10.0"
+androidx_custom_tabs = "1.8.0"
+androidx_material3 = "1.3.1"
+
+hilt = "2.55"
+roomCompiler = "2.6.1"
+roomKtx = "2.6.1"
+roomPaging = "2.6.1"
+roomRuntime = "2.6.1"
+roomTesting = "2.6.1"
+zxing = "3.5.3"
+
+firebase = "33.9.0"
+
+compose = "2025.02.00"
+hilt_navigation_compose = "1.2.0"
+lifecycle_runtime_compose = "2.8.7"
+
 junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.10.0"
-composeBom = "2025.01.00"
-modelmapper = "3.1.1"
+test_junit = "1.2.1"
+espresso_core = "3.6.1"
+mockk = "1.13.14"
+
+coil = "2.7.0"
+
+onetrust = "202407.2.0.0"
+
+leakcanary = "2.14"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-modelmapper = { module = "org.modelmapper:modelmapper", version.ref = "modelmapper" }
+
+# Jetbrains
+jetbrains_coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "jetbrains_coroutines" }
+jetbrains_serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "jetbrains_serialization" }
+jetbrains-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "jetbrains_reflect" }
+jetbrains_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "jetbrains_coroutines" }
+
+# Compose
+compose_ui = { module = "androidx.compose.ui:ui" }
+compose_ui_graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose_ui_tooling_preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose_material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx_material3" }
+compose_hilt_navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt_navigation_compose" }
+compose_lifecycle_runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle_runtime_compose" }
+
+# Androidx
+androidx_core = { module = "androidx.core:core-ktx", version.ref = "androidx_core" }
+androidx_lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx_lifecycle" }
+androidx_activity_compose = { module = "androidx.activity:activity-compose", version.ref = "androidx_activity" }
+androidx_navigation = { module = "androidx.navigation:navigation-compose", version.ref = "androidx_navigation" }
+androidx_app_compat = { module = "androidx.appcompat:appcompat", version.ref = "androidx_app_compat" }
+androidx_custom_tabs = { module = "androidx.browser:browser", version.ref = "androidx_custom_tabs" }
+
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+room-paging = { module = "androidx.room:room-paging", version.ref = "roomPaging" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "roomTesting" }
+zxing = { module = "com.google.zxing:core", version.ref = "zxing" }
+
+compose_bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose" }
+compose_ui_test_junit = { module = "androidx.compose.ui:ui-test-junit4" }
+compose_ui_tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+
+firebase_bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+firebase_analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase_remote_config = { module = "com.google.firebase:firebase-config-ktx" }
+firebase_crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase_performance = { module = "com.google.firebase:firebase-perf-ktx" }
+firebase_messaging = { module = "com.google.firebase:firebase-messaging" }
+
+test_junit = { module = "androidx.test.ext:junit", version.ref = "test_junit" }
+espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso_core" }
+junit = { module = "junit:junit", version.ref = "junit" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
+coil_svg = { module = "io.coil-kt:coil-svg", version.ref = "coil"}
+
+onetrust = { module = "com.onetrust.cmp:native-sdk", version.ref = "onetrust" }
+
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+
+[bundles]
+
+compose = ["compose_ui", "compose_ui_graphics", "compose_ui_tooling_preview", "compose_material3",
+    "compose_hilt_navigation", "compose_lifecycle_runtime"]
+ui_test = ["compose_ui_tooling", "compose_ui_test_manifest"]
+firebase = ["firebase_analytics", "firebase_remote_config", "firebase_crashlytics", "firebase_performance", "firebase_messaging"]
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
+kotlin-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "plugin_jetbrains_kotlin" }
+android_application = { id = "com.android.application", version.ref = "plugin_android_application" }
+jetbrains_kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "plugin_jetbrains_kotlin" }
+jetbrains_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin_jetbrains_serialization" }
+google_devtools_ksp = { id = "com.google.devtools.ksp", version.ref = "plugin_ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google_services = { id = "com.google.gms.google-services", version.ref = "plugin_google_services" }
+firebase_crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "plugin_firebase_crashlytics" }
+firebase_performance = { id = "com.google.firebase.firebase-perf", version.ref = "plugin_firebase_performance" }
